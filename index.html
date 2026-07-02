@@ -22,9 +22,7 @@
   }
 
   *{ margin:0; padding:0; box-sizing:border-box; }
-
   html{ scroll-behavior:smooth; }
-
   body{
     background:var(--bg);
     color:var(--text);
@@ -32,13 +30,9 @@
     line-height:1.6;
     overflow-x:hidden;
   }
-
   h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
-
   .mono{ font-family:'IBM Plex Mono', monospace; }
-
   a{ color:inherit; text-decoration:none; }
-
   ::selection{ background:var(--copper); color:#0A0E17; }
 
   /* ---------- Nav ---------- */
@@ -57,9 +51,7 @@
     letter-spacing:0.05em;
   }
   .logo span{ color:var(--text-muted); }
-  nav ul{
-    display:flex; gap:32px; list-style:none;
-  }
+  nav ul{ display:flex; gap:32px; list-style:none; }
   nav a{
     font-size:0.82rem;
     text-transform:uppercase;
@@ -68,9 +60,8 @@
     transition:color 0.25s ease;
     position:relative;
   }
-  nav a:hover, nav a:focus-visible{ color:var(--text); }
+  nav a:hover, nav a:focus-visible, nav a.active{ color:var(--text); }
   nav a:focus-visible{ outline:1px solid var(--copper); outline-offset:4px; }
-
   .menu-btn{
     display:none;
     flex-direction:column; gap:5px;
@@ -86,23 +77,13 @@
     padding:0 6vw;
     overflow:hidden;
   }
-
-  .sld-bg{
-    position:absolute; inset:0;
-    opacity:0.55;
-    pointer-events:none;
-  }
+  .sld-bg{ position:absolute; inset:0; opacity:0.55; pointer-events:none; }
   .sld-bg svg{ width:100%; height:100%; }
   .sld-line{ stroke:var(--border-strong); stroke-width:1.2; fill:none; }
   .sld-node{ fill:var(--surface2); stroke:var(--copper); stroke-width:1.4; }
   .sld-breaker{ fill:none; stroke:var(--teal); stroke-width:1.4; opacity:0.8; }
-  .pulse{
-    fill:var(--copper-light);
-    filter:drop-shadow(0 0 4px var(--copper));
-  }
-  @keyframes travel{
-    to{ offset-distance:100%; }
-  }
+  .pulse{ fill:var(--copper-light); filter:drop-shadow(0 0 4px var(--copper)); }
+  @keyframes travel{ to{ offset-distance:100%; } }
   .pulse{
     offset-path: path("M -50,120 L 200,120 L 260,60 L 520,60 L 580,140 L 900,140");
     offset-distance:0%;
@@ -114,7 +95,6 @@
     animation: travel 8s linear infinite;
     animation-delay:1.5s;
   }
-
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
     color:var(--teal);
@@ -126,233 +106,39 @@
     position:relative; z-index:2;
   }
   .eyebrow::before{
-    content:"";
-    width:8px; height:8px;
-    background:var(--teal);
-    border-radius:50%;
-    box-shadow:0 0 8px var(--teal);
+    content:""; width:8px; height:8px; background:var(--teal);
+    border-radius:50%; box-shadow:0 0 8px var(--teal);
   }
-
-  .hero h1{
-    font-size:clamp(2.6rem, 7vw, 5.2rem);
-    line-height:1.02;
-    max-width:16ch;
-    position:relative; z-index:2;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--copper-light);
-  }
-
-  .hero-sub{
-    margin-top:24px;
-    max-width:56ch;
-    font-size:1.08rem;
-    color:var(--text-muted);
-    position:relative; z-index:2;
-  }
-
+  .hero h1{ font-size:clamp(2.6rem, 7vw, 5.2rem); line-height:1.02; max-width:16ch; position:relative; z-index:2; }
+  .hero h1 em{ font-style:normal; color:var(--copper-light); }
+  .hero-sub{ margin-top:24px; max-width:56ch; font-size:1.08rem; color:var(--text-muted); position:relative; z-index:2; }
   .hero-meta{
-    margin-top:14px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.85rem;
-    color:var(--text-muted);
-    display:flex; flex-wrap:wrap; gap:18px;
-    position:relative; z-index:2;
+    margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:0.85rem;
+    color:var(--text-muted); display:flex; flex-wrap:wrap; gap:18px; position:relative; z-index:2;
   }
   .hero-meta span{ color:var(--copper-light); }
-
-  .hero-cta{
-    margin-top:38px;
-    display:flex; gap:14px; flex-wrap:wrap;
-    position:relative; z-index:2;
-  }
+  .hero-cta{ margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; position:relative; z-index:2; }
   .btn{
-    padding:13px 26px;
-    border-radius:2px;
-    font-size:0.85rem;
-    letter-spacing:0.03em;
-    display:inline-flex; align-items:center; gap:10px;
-    transition:all 0.25s ease;
+    padding:13px 26px; border-radius:2px; font-size:0.85rem; letter-spacing:0.03em;
+    display:inline-flex; align-items:center; gap:10px; transition:all 0.25s ease;
     border:1px solid var(--border-strong);
   }
-  .btn-primary{
-    background:var(--copper);
-    color:#12100A;
-    border-color:var(--copper);
-    font-weight:600;
-  }
+  .btn-primary{ background:var(--copper); color:#12100A; border-color:var(--copper); font-weight:600; }
   .btn-primary:hover{ background:var(--copper-light); transform:translateY(-2px); }
   .btn-ghost{ color:var(--text); }
   .btn-ghost:hover{ border-color:var(--copper); color:var(--copper-light); transform:translateY(-2px); }
   .btn:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
-
   .scroll-cue{
-    position:absolute; bottom:34px; left:6vw;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    color:var(--text-muted);
-    display:flex; align-items:center; gap:10px;
-    z-index:2;
+    position:absolute; bottom:34px; left:6vw; font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; color:var(--text-muted); display:flex; align-items:center; gap:10px; z-index:2;
   }
-  .scroll-cue::after{
-    content:""; width:1px; height:34px;
-    background:linear-gradient(to bottom, var(--copper), transparent);
-  }
+  .scroll-cue::after{ content:""; width:1px; height:34px; background:linear-gradient(to bottom, var(--copper), transparent); }
 
-  /* ---------- Sections ---------- */
-  section{ padding:120px 6vw; position:relative; }
-  .section-head{
-    display:flex; align-items:baseline; gap:16px;
-    margin-bottom:56px;
-  }
-  .section-num{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--copper);
-    font-size:0.85rem;
-  }
-  .section-head h2{
-    font-size:clamp(1.7rem, 3.2vw, 2.4rem);
-  }
-  .section-line{
-    flex:1; height:1px; background:var(--border);
-  }
-
-  .reveal{
-    opacity:0; transform:translateY(24px);
-    transition:opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-
-  /* About */
-  .about-grid{
-    display:grid; grid-template-columns:1.3fr 1fr; gap:60px;
-    align-items:start;
-  }
-  .about-grid p{ color:var(--text-muted); font-size:1.02rem; max-width:62ch; }
-  .about-grid p + p{ margin-top:18px; }
-
-  .stat-card{
-    background:var(--surface);
-    border:1px solid var(--border);
-    padding:22px 24px;
-    margin-bottom:14px;
-  }
-  .stat-card .num{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:1.9rem;
-    color:var(--copper-light);
-  }
-  .stat-card .lbl{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.76rem;
-    color:var(--text-muted);
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    margin-top:4px;
-  }
-
-  /* Timeline (Experience & Education) */
-  .timeline{
-    position:relative;
-    border-left:1px solid var(--border-strong);
-    padding-left:40px;
-  }
-  .t-item{ position:relative; padding-bottom:52px; }
-  .t-item:last-child{ padding-bottom:0; }
-  .t-item::before{
-    content:"";
-    position:absolute; left:-46px; top:4px;
-    width:11px; height:11px;
-    background:var(--bg);
-    border:2px solid var(--copper);
-    border-radius:50%;
-  }
-  .t-date{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.78rem;
-    color:var(--teal);
-    letter-spacing:0.04em;
-    margin-bottom:8px;
-    display:block;
-  }
-  .t-item h3{ font-size:1.25rem; margin-bottom:2px; }
-  .t-org{ color:var(--copper-light); font-size:0.92rem; margin-bottom:14px; display:block; }
-  .t-item ul{ list-style:none; color:var(--text-muted); font-size:0.96rem; }
-  .t-item li{ position:relative; padding-left:18px; margin-bottom:8px; }
-  .t-item li::before{
-    content:"—"; position:absolute; left:0; color:var(--border-strong);
-  }
-
-  /* Skills */
-  .skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
-  .skill-block h3{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.82rem;
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-    color:var(--text-muted);
-    margin-bottom:20px;
-    font-weight:500;
-  }
-  .chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
-  .chip{
-    padding:9px 16px;
-    border:1px solid var(--border);
-    background:var(--surface);
-    font-size:0.86rem;
-    color:var(--text);
-    transition:border-color 0.25s ease, color 0.25s ease;
-  }
-  .chip:hover{ border-color:var(--copper); color:var(--copper-light); }
-  .comp-list{ list-style:none; color:var(--text-muted); font-size:0.96rem; }
-  .comp-list li{ padding:12px 0; border-bottom:1px solid var(--border); display:flex; gap:14px; }
-  .comp-list li::before{ content:"›"; color:var(--copper); flex-shrink:0; }
-
-  /* Publications */
-  .pub-list{ display:flex; flex-direction:column; gap:0; }
-  .pub-item{
-    display:grid; grid-template-columns:64px 1fr; gap:24px;
-    padding:26px 0;
-    border-bottom:1px solid var(--border);
-  }
-  .pub-tag{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--copper);
-    font-size:0.78rem;
-  }
-  .pub-item p{ color:var(--text-muted); font-size:0.95rem; }
-  .pub-item p.pub-title{ color:var(--text); font-size:1rem; margin-bottom:6px; }
-
-  /* References */
-  .ref-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-  .ref-card{
-    background:var(--surface);
-    border:1px solid var(--border);
-    padding:28px;
-  }
-  .ref-card h3{ font-size:1.05rem; margin-bottom:4px; }
-  .ref-card .role{ color:var(--text-muted); font-size:0.88rem; margin-bottom:14px; display:block; }
-  .ref-card .mono{ font-size:0.82rem; color:var(--teal); }
-
-  /* Contact / footer */
-  footer{
-    padding:100px 6vw 50px;
-    border-top:1px solid var(--border);
-  }
-  .footer-cta h2{
-    font-size:clamp(2rem, 5vw, 3.2rem);
-    max-width:14ch;
-    margin-bottom:28px;
-  }
+  /* ---------- Footer ---------- */
+  footer{ padding:60px 6vw 50px; border-top:1px solid var(--border); margin-top: 40px; }
   .footer-links{
-    display:flex; gap:40px; flex-wrap:wrap;
-    margin-top:50px;
-    padding-top:30px;
-    border-top:1px solid var(--border);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.8rem;
-    color:var(--text-muted);
+    display:flex; gap:40px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem; color:var(--text-muted);
   }
   .footer-links a:hover{ color:var(--copper-light); }
   .copyright{ margin-top:30px; font-size:0.75rem; color:var(--text-muted); font-family:'IBM Plex Mono', monospace; }
@@ -360,46 +146,36 @@
   @media (max-width: 860px){
     nav ul{
       position:fixed; top:64px; right:0; height:calc(100vh - 64px);
-      background:var(--bg); flex-direction:column; gap:0;
-      width:70vw; max-width:320px;
-      transform:translateX(100%); transition:transform 0.35s ease;
-      padding:30px 6vw; border-left:1px solid var(--border);
+      background:var(--bg); flex-direction:column; gap:0; width:70vw; max-width:320px;
+      transform:translateX(100%); transition:transform 0.35s ease; padding:30px 6vw; border-left:1px solid var(--border);
     }
     nav ul.open{ transform:translateX(0); }
     nav li{ padding:14px 0; border-bottom:1px solid var(--border); }
     .menu-btn{ display:flex; }
-    .about-grid, .skills-grid, .ref-grid{ grid-template-columns:1fr; }
-    section{ padding:80px 6vw; }
-    .pub-item{ grid-template-columns:1fr; gap:6px; }
   }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .pulse, .pulse2{ animation:none; display:none; }
-    .reveal{ transition:none; opacity:1; transform:none; }
-  }
+  @media (prefers-reduced-motion: reduce){ .pulse, .pulse2{ animation:none; display:none; } }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">JKY<span>.eng</span></div>
+  <div class="logo"><a href="index.html">JKY<span>.eng</span></a></div>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <nav>
     <ul id="navList">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
+<main class="hero">
   <div class="sld-bg" aria-hidden="true">
     <svg viewBox="0 0 1000 420" preserveAspectRatio="none">
       <path class="sld-line" d="M -50,120 L 200,120 L 260,60 L 520,60 L 580,140 L 900,140" />
@@ -426,220 +202,27 @@
     <a class="btn btn-ghost" href="https://www.linkedin.com/in/jitesh-yadav-6a6aa8220" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn btn-ghost" href="tel:+9779860318638">+977 986 031 8638</a>
   </div>
-  <div class="scroll-cue">SCROLL</div>
-</section>
+  <div class="scroll-cue">EXPLORE</div>
+</main>
 
-<section id="about">
-  <div class="section-head">
-    <span class="section-num mono">01</span>
-    <h2>About</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-grid">
-    <div class="reveal">
-      <p>I'm a detail-oriented electrical power engineer working across power systems analysis, modelling and simulation. Most of my work sits at the intersection of network design and reliability — building models that tell you not just whether a system works, but how it fails, and what protects it when it does.</p>
-      <p>Alongside engineering practice, I teach. Over the past few years I've taught Power Stations, Switchgear & Protection, Electrical Energy Audit and High Voltage Engineering to diploma and undergraduate students, and run hands-on sessions in ETAP, MATLAB/Simulink and DIgSILENT PowerFactory.</p>
-      <p>My research centers on protection coordination for the Integrated Nepal Power System, and I've contributed to work on high-frequency transformer design for solid-state transformers.</p>
-    </div>
-    <div class="reveal">
-      <div class="stat-card">
-        <div class="num">3+ yrs</div>
-        <div class="lbl">Teaching &amp; research</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">2</div>
-        <div class="lbl">Peer-reviewed publications</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">4</div>
-        <div class="lbl">Core simulation tools — ETAP, MATLAB, DIgSILENT, HOMER Pro</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="section-head">
-    <span class="section-num mono">02</span>
-    <h2>Experience</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="timeline reveal">
-    <div class="t-item">
-      <span class="t-date mono">NOV 2025 — PRESENT</span>
-      <h3>Visiting Faculty</h3>
-      <span class="t-org">Khwopa College of Engineering, Bhaktapur</span>
-      <ul>
-        <li>Delivering lectures on High Voltage Engineering, covering insulation, breakdown phenomena and testing techniques for undergraduates.</li>
-      </ul>
-    </div>
-    <div class="t-item">
-      <span class="t-date mono">SEP 2024 — JAN 2025</span>
-      <h3>Instructor (Part Time)</h3>
-      <span class="t-org">Nepal Engineering College, Bhaktapur</span>
-      <ul>
-        <li>Ran practical training in ETAP, MATLAB/Simulink and DIgSILENT PowerFactory for undergraduate students.</li>
-        <li>Designed course materials, tutorials and simulation exercises tied to real-world power systems and control applications.</li>
-        <li>Mentored student teams through modelling, simulation and performance analysis projects.</li>
-      </ul>
-    </div>
-    <div class="t-item">
-      <span class="t-date mono">NOV 2022 — DEC 2023</span>
-      <h3>Lecturer</h3>
-      <span class="t-org">Birgunj Institute of Technology (CTEVT), Birgunj</span>
-      <ul>
-        <li>Taught Power Stations, Switchgear & Protection, and Electrical Energy Audit & Conservation to diploma students.</li>
-        <li>Built curriculum-aligned lesson plans bridging theoretical and practical understanding.</li>
-        <li>Guided student projects and assessed academic performance with structured feedback.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="section-head">
-    <span class="section-num mono">03</span>
-    <h2>Education</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="timeline reveal">
-    <div class="t-item">
-      <span class="t-date mono">NOV 2023 — JAN 2026</span>
-      <h3>M.E. Electrical Power Engineering</h3>
-      <span class="t-org">School of Engineering, Kathmandu University, Dhulikhel</span>
-    </div>
-    <div class="t-item">
-      <span class="t-date mono">GRADUATED 2022</span>
-      <h3>B.E. Electrical &amp; Electronics Engineering</h3>
-      <span class="t-org">Nepal Engineering College, Pokhara University, Bhaktapur</span>
-    </div>
-    <div class="t-item">
-      <span class="t-date mono">GRADUATED 2012</span>
-      <h3>+2 (Intermediate Level)</h3>
-      <span class="t-org">NASA International H.S. School, HSEB, Kathmandu</span>
-    </div>
-    <div class="t-item">
-      <span class="t-date mono">GRADUATED 2010</span>
-      <h3>School Leaving Certificate</h3>
-      <span class="t-org">Prabhat Secondary English Boarding School, NEB, Gaur, Rautahat</span>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="section-head">
-    <span class="section-num mono">04</span>
-    <h2>Skills</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-block reveal">
-      <h3>Core Competencies</h3>
-      <ul class="comp-list">
-        <li>Power system modeling, load flow analysis, short circuit analysis and protection coordination studies</li>
-        <li>Renewable energy system design and hybrid system modeling</li>
-        <li>Techno-economic analysis and feasibility studies</li>
-        <li>Electrical network design, analysis and optimization for reliability and efficiency</li>
-      </ul>
-    </div>
-    <div class="skill-block reveal">
-      <h3>Tools &amp; Software</h3>
-      <div class="chip-row">
-        <span class="chip">MATLAB / Simulink</span>
-        <span class="chip">ETAP</span>
-        <span class="chip">DIgSILENT PowerFactory</span>
-        <span class="chip">HOMER Pro</span>
-        <span class="chip">AutoCAD</span>
-        <span class="chip">Python</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="section-head">
-    <span class="section-num mono">05</span>
-    <h2>Publications &amp; Proceedings</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="pub-list reveal">
-    <div class="pub-item">
-      <span class="pub-tag mono">PUB · 01</span>
-      <div>
-        <p class="pub-title">Protection Coordination Study and Analysis of Section of Integrated Nepal Power System</p>
-        <p>J. K. Yadav, S. Maharjan, S. Gurung — Jnl. Sci. Engg., vol. 12, no. 2, pp. 47–52, Dec. 2025.</p>
-      </div>
-    </div>
-    <div class="pub-item">
-      <span class="pub-tag mono">PUB · 02</span>
-      <div>
-        <p class="pub-title">High-Frequency Transformer Design for Solid State Transformers in Electric Power Distribution Systems: A Novel Design Methodology</p>
-        <p>Y. K. Poudel, R. K. Pudasaini, D. N. Kandel, S. Maharjan, Y. Bhandari, J. K. Yadav — Int'l Journal of Applied Engineering &amp; Technology, vol. 6, no. 1, pp. 1141–1160, Jan. 2024.</p>
-      </div>
-    </div>
-    <div class="pub-item">
-      <span class="pub-tag mono">CONF · 01</span>
-      <div>
-        <p class="pub-title">Protection Coordination Study and Analysis of Section of Integrated Nepal Power System</p>
-        <p>Presented at RESSD — International Conference on Role of Energy for Sustainable Social Development, May 2025, Kathmandu.</p>
-      </div>
-    </div>
-    <div class="pub-item">
-      <span class="pub-tag mono">CONF · 02</span>
-      <div>
-        <p class="pub-title">Protection System Performance Study and Analysis of a Section of the Integrated Nepal Power System</p>
-        <p>Presented at KU CAP-25 Conference, Department of Electrical &amp; Electronics Engineering, Kathmandu University.</p>
-      </div>
-    </div>
-  </div>
-
-   
-</section>
-
-<footer id="contact">
-  <div class="footer-cta reveal">
-    <h2>Let's talk power systems.</h2>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="mailto:jiteshky9860@gmail.com">jiteshky9860@gmail.com</a>
-      <a class="btn btn-ghost" href="tel:+9779860318638">+977 986 031 8638</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/jitesh-yadav-6a6aa8220" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </div>
+<footer>
   <div class="footer-links">
     <span>Kathmandu, Nepal</span>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#publications">Publications</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="publications.html">Publications</a>
   </div>
   <p class="copyright">© 2026 Jitesh Kumar Yadav. NEC No. 2537.</p>
 </footer>
 
 <script>
-  // Mobile nav toggle
   const menuBtn = document.getElementById('menuBtn');
   const navList = document.getElementById('navList');
   menuBtn.addEventListener('click', () => {
     const open = navList.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', open);
   });
-  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navList.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', false);
-  }));
-
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
 </script>
-
 </body>
 </html>
